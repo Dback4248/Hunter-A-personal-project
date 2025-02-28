@@ -7,7 +7,7 @@ public class Playermovement : MonoBehaviour
 	public float movementSpeed;
 
 	private Rigidbody2D _rb;
-	private object _moveAmount;
+	private readonly object _moveAmount;
 
 	void Awake()
 	{
@@ -17,6 +17,6 @@ public class Playermovement : MonoBehaviour
 
 	void Update()
 	{
-		_rb.linearVelocityX = _moveAmount.x * movementSpeed;
+		_rb.linearVelocityX = _moveAmount. * movementSpeed;
 	}
 }
