@@ -6,17 +6,26 @@ public class Playermovement : MonoBehaviour
 
 	public float movementSpeed;
 
-	private Rigidbody2D _rb;
-	private readonly object _moveAmount;
+	private Rigidbody2D rb;
+	public float moveSpeed = 5f;
+	private float horizontalMovement;
 
 	void Awake()
 	{
 		// Set the _rb variable equal to this GameObject's rigidbody.
-		_rb = GetComponent<Rigidbody2D>();
+		rb = GetComponent<Rigidbody2D>();
 	}
 
+	[System.Obsolete]
 	void Update()
 	{
-		_rb.linearVelocityX = _moveAmount. * movementSpeed;
+		rb.velocity = new Vector2(horizontalMovement * moveSpeed, rb.velocity.y);
 	}
+
+
+	public void Move(InputAction.CallbackContext context) 
+	{
+		horizontalMovement = context.ReadValue<Vector2>().x;
+	}
+
 }
