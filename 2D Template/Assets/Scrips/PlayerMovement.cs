@@ -1,31 +1,87 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 [RequireComponent(typeof(Rigidbody2D))]// This script can only be added to a Gameobject with a Rigidbody2D
-public class Playermovement : MonoBehaviour
+public class PlayerMovement : MonoBehaviour
 {
+	private new Camera camera;
+	private new Rigidbody2D rigidbody;
 
-	public float movementSpeed;
+	private Vector2 velocity;
 
-	private Rigidbody2D rb;
-	public float moveSpeed = 5f;
-	private float horizontalMovement;
-
-	void Awake()
+	public PlayerMovement(float moveSpeed)
 	{
-		// Set the _rb variable equal to this GameObject's rigidbody.
-		rb = GetComponent<Rigidbody2D>();
+		this.moveSpeed = moveSpeed;
+	}
+
+	public float moveSpeed = 8f;
+	public float maxJumpHeight = 5f;
+	public float maxJumpTime = 1f;
+
+	public float JumpForce => (2f * maxJumpHeight) / (maxJumpTime / 2f);
+	public float Gravity => (-2f * maxJumpHeight) / Mathf.Pow((maxJumpTime / 2f), 2f);
+
+	public bool Grounded { get; private set; }
+	public bool Jumping { get; private set; }
+	private float inputAxis;
+
+	private void Awake()
+	{
+		rigidbody = GetComponent<Rigidbody2D>();
+		camera = Camera.main;
 	}
 
 	[System.Obsolete]
-	void Update()
+	private void Update()
 	{
-		rb.velocity = new Vector2(horizontalMovement * moveSpeed, rb.velocity.y);
+		HorizontalMovement();
+		Grounded = rigidbody.Raycast(Vector2.down);
+
+		if (Grounded)
+		{
+			GroundedMovement();
+		}
+
+		ApplyGravity();
+
 	}
 
-
-	public void Move(InputAction.CallbackContext context) 
+	private void HorizontalMovement()
 	{
-		horizontalMovement = context.ReadValue<Vector2>().x;
+		inputAxis = Input.GetAxis("Horizontal");
+		velocity.x = Mathf.MoveTowards(velocity.x, inputAxis * moveSpeed, moveSpeed * Time.deltaTime);
 	}
 
+	private void GroundedMovement()
+	{
+		velocity.y = Mathf.Max(velocity.y, 0f);
+		Jumping = velocity.y > 0f;
+
+		if (Input.GetButtonDown("Jump"))
+		{
+			velocity.y = JumpForce;
+			Jumping = true;
+		}
+	}
+
+	private void ApplyGravity()
+	{
+		bool falling = velocity.y < 0f || !Input.GetButton("Jump");
+		float multiplier = falling ? 2f : 1f;
+
+		velocity.y += Gravity * multiplier * Time.deltaTime;
+		velocity.y = Mathf.Max(velocity.y, Gravity / 2f);
+	}
+
+	private void FixedUpdate()
+	{
+		Vector2 position = rigidbody.position;
+		position += velocity * Time.fixedDeltaTime;
+
+		Vector2 leftEdge = camera.ScreenToWorldPoint(Vector2.zero);
+		Vector2 rightEdge = camera.ScreenToWorldPoint(new Vector2(Screen.width, Screen.height));
+		position.x = Mathf.Clamp(position.x, leftEdge.x + 0.5f, rightEdge.x - 0.5f);
+
+		rigidbody.MovePosition(position);
+	}
 }
+

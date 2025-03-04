@@ -3573,6 +3573,7 @@ GameObject:
   - component: {fileID: 519420031}
   - component: {fileID: 519420029}
   - component: {fileID: 519420030}
+  - component: {fileID: 519420033}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -3698,6 +3699,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &519420033
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 519420028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 58d2ce3435e72ed45ba99a475e55e0d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &522841616
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3905,7 +3918,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6772452374769463752, guid: 5009bee6e6bb3ae45ab854879be1b36a, type: 3}
       propertyPath: m_SpriteTilingProperty.newSize.x
-      value: 8.641384
+      value: 8.752896
       objectReference: {fileID: 0}
     - target: {fileID: 6772452374769463752, guid: 5009bee6e6bb3ae45ab854879be1b36a, type: 3}
       propertyPath: m_SpriteTilingProperty.newSize.y
@@ -3913,7 +3926,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7478933548457334154, guid: 5009bee6e6bb3ae45ab854879be1b36a, type: 3}
       propertyPath: m_Size.x
-      value: 8.641384
+      value: 8.752896
       objectReference: {fileID: 0}
     - target: {fileID: 7478933548457334154, guid: 5009bee6e6bb3ae45ab854879be1b36a, type: 3}
       propertyPath: m_Size.y
@@ -3925,7 +3938,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7492466996067255502, guid: 5009bee6e6bb3ae45ab854879be1b36a, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 5.3634
+      value: 5.3076
       objectReference: {fileID: 0}
     - target: {fileID: 7492466996067255502, guid: 5009bee6e6bb3ae45ab854879be1b36a, type: 3}
       propertyPath: m_LocalPosition.y
@@ -4889,7 +4902,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6772452374769463752, guid: 5009bee6e6bb3ae45ab854879be1b36a, type: 3}
       propertyPath: m_SpriteTilingProperty.newSize.x
-      value: 8.641384
+      value: 8.308777
       objectReference: {fileID: 0}
     - target: {fileID: 6772452374769463752, guid: 5009bee6e6bb3ae45ab854879be1b36a, type: 3}
       propertyPath: m_SpriteTilingProperty.newSize.y
@@ -4897,7 +4910,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7478933548457334154, guid: 5009bee6e6bb3ae45ab854879be1b36a, type: 3}
       propertyPath: m_Size.x
-      value: 8.641384
+      value: 8.308777
       objectReference: {fileID: 0}
     - target: {fileID: 7478933548457334154, guid: 5009bee6e6bb3ae45ab854879be1b36a, type: 3}
       propertyPath: m_Size.y
@@ -4909,7 +4922,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7492466996067255502, guid: 5009bee6e6bb3ae45ab854879be1b36a, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -3.0619
+      value: -3.2282
       objectReference: {fileID: 0}
     - target: {fileID: 7492466996067255502, guid: 5009bee6e6bb3ae45ab854879be1b36a, type: 3}
       propertyPath: m_LocalPosition.y
@@ -6380,6 +6393,18 @@ PrefabInstance:
       value: GroundBlock
       objectReference: {fileID: 0}
     - target: {fileID: 6772452374769463752, guid: 5009bee6e6bb3ae45ab854879be1b36a, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6772452374769463752, guid: 5009bee6e6bb3ae45ab854879be1b36a, type: 3}
+      propertyPath: m_AutoTiling
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6772452374769463752, guid: 5009bee6e6bb3ae45ab854879be1b36a, type: 3}
+      propertyPath: m_UsedByEffector
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6772452374769463752, guid: 5009bee6e6bb3ae45ab854879be1b36a, type: 3}
       propertyPath: m_SpriteTilingProperty.drawMode
       value: 2
       objectReference: {fileID: 0}
@@ -7571,6 +7596,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1192042853}
+  - component: {fileID: 1192042854}
   m_Layer: 0
   m_Name: Wave Controller
   m_TagString: Untagged
@@ -7593,6 +7619,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1192042854
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1192042852}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bfe4f047659d4a84d8e5fea2209bbe4b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  waveData: {fileID: 11400000, guid: 096e8ae8828388149b3da3075d7d6721, type: 2}
 --- !u!1001 &1207170710
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -14425,29 +14464,33 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1701995655}
     m_Modifications:
-    - target: {fileID: 3570698381460005129, guid: a82915cdd7ea8b54d96afb3d3f0d9fd5, type: 3}
-      propertyPath: m_Enabled
-      value: 0
+    - target: {fileID: 5372155888128441279, guid: a82915cdd7ea8b54d96afb3d3f0d9fd5, type: 3}
+      propertyPath: m_Size.x
+      value: 0.22
       objectReference: {fileID: 0}
     - target: {fileID: 5372155888128441279, guid: a82915cdd7ea8b54d96afb3d3f0d9fd5, type: 3}
-      propertyPath: m_IsTrigger
-      value: 1
+      propertyPath: m_Size.y
+      value: 0.0001
+      objectReference: {fileID: 0}
+    - target: {fileID: 5372155888128441279, guid: a82915cdd7ea8b54d96afb3d3f0d9fd5, type: 3}
+      propertyPath: m_Offset.x
+      value: -0.73
+      objectReference: {fileID: 0}
+    - target: {fileID: 5372155888128441279, guid: a82915cdd7ea8b54d96afb3d3f0d9fd5, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.92
       objectReference: {fileID: 0}
     - target: {fileID: 5492766440364291957, guid: a82915cdd7ea8b54d96afb3d3f0d9fd5, type: 3}
       propertyPath: m_Name
       value: Mario
       objectReference: {fileID: 0}
-    - target: {fileID: 5492766440364291957, guid: a82915cdd7ea8b54d96afb3d3f0d9fd5, type: 3}
-      propertyPath: m_TagString
-      value: Player
-      objectReference: {fileID: 0}
     - target: {fileID: 6352907388425908407, guid: a82915cdd7ea8b54d96afb3d3f0d9fd5, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.40431595
+      value: -0.419
       objectReference: {fileID: 0}
     - target: {fileID: 6352907388425908407, guid: a82915cdd7ea8b54d96afb3d3f0d9fd5, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.8894677
+      value: 3.891
       objectReference: {fileID: 0}
     - target: {fileID: 6352907388425908407, guid: a82915cdd7ea8b54d96afb3d3f0d9fd5, type: 3}
       propertyPath: m_LocalPosition.z
@@ -14481,74 +14524,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 3417218407680211777, guid: a82915cdd7ea8b54d96afb3d3f0d9fd5, type: 3}
+    m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 5492766440364291957, guid: a82915cdd7ea8b54d96afb3d3f0d9fd5, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 2031267885211836480}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a82915cdd7ea8b54d96afb3d3f0d9fd5, type: 3}
---- !u!1 &2031267885211836479 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5492766440364291957, guid: a82915cdd7ea8b54d96afb3d3f0d9fd5, type: 3}
-  m_PrefabInstance: {fileID: 2031267885211836478}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &2031267885211836480
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2031267885211836479}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Actions: {fileID: -944628639613478452, guid: e04937b2d485a4f459df0e876fcf3545, type: 3}
-  m_NotificationBehavior: 2
-  m_UIInputModule: {fileID: 0}
-  m_DeviceLostEvent:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 2031267885211836479}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  m_DeviceRegainedEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_ControlsChangedEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_ActionEvents:
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 8e7bdcde-a727-4d71-976e-44974b02b968
-    m_ActionName: Player/New action
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 0b4c7e07-341c-47dd-bf48-aa184ec44318
-    m_ActionName: UI/New action
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 6e595a37-87ff-4296-82a7-2828dd133003
-    m_ActionName: Player/New action1
-  m_NeverAutoSwitchControlSchemes: 0
-  m_DefaultControlScheme: 
-  m_DefaultActionMap: Player
-  m_SplitScreenIndex: -1
-  m_Camera: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
