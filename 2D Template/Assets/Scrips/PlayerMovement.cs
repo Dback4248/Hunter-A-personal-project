@@ -1,6 +1,5 @@
 using UnityEngine;
-using UnityEngine.InputSystem;
-[RequireComponent(typeof(Rigidbody2D))]// This script can only be added to a Gameobject with a Rigidbody2D
+
 public class PlayerMovement : MonoBehaviour
 {
 	private new Camera camera;

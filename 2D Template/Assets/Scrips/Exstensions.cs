@@ -7,9 +7,10 @@ public static class Exstensions
 	[System.Obsolete]
 	public static bool Raycast(this Rigidbody2D rigidbody, Vector2 direction)
 	{
-		bool isKinematic = rigidbody.isKinematic;
-		if (isKinematic)
+
+		if (GetIsKinematic(rigidbody))
 		{
+		
 			return false;
 		}
 
@@ -18,6 +19,11 @@ public static class Exstensions
 
 		RaycastHit2D hit = Physics2D.CircleCast(rigidbody.position, radius, direction, distance, layerMask);
 		return hit.collider != null && hit.rigidbody != rigidbody;
+
+		static bool GetIsKinematic(Rigidbody2D rigidbody)
+		{
+			return rigidbody.isKinematic;
+		}
 	}
 
 }
