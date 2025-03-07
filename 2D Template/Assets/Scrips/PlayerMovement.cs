@@ -33,7 +33,7 @@ public class PlayerMovement : MonoBehaviour
 	private void Update()
 	{
 		HorizontalMovement();
-		Grounded = rigidbody.Raycast(Vector2.down);
+		Grounded = rigidbody.Raycast(direction: Vector2.down);
 
 		if (Grounded)
 		{

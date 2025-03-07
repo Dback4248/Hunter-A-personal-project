@@ -10,7 +10,7 @@ public static class Exstensions
 
 		if (GetIsKinematic(rigidbody))
 		{
-		
+
 			return false;
 		}
 

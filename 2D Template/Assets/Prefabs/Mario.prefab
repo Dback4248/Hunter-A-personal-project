@@ -186,8 +186,8 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: -0.375}
-  m_Size: {x: 0.25, y: 0.25}
+  m_Offset: {x: 0, y: 0}
+  m_Size: {x: 1, y: 1}
   m_Direction: 0
 --- !u!114 &2235641714151103999
 MonoBehaviour:
@@ -202,7 +202,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 8
-  maxJumpHeight: 4
+  maxJumpHeight: 5
   maxJumpTime: 1
 --- !u!114 &4482830272820286094
 MonoBehaviour:
