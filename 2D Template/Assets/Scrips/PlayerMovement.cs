@@ -29,7 +29,7 @@ public class PlayerMovement : MonoBehaviour
 		camera = Camera.main;
 	}
 
-	[System.Obsolete]
+
 	private void Update()
 	{
 		HorizontalMovement();
@@ -48,6 +48,10 @@ public class PlayerMovement : MonoBehaviour
 	{
 		inputAxis = Input.GetAxis("Horizontal");
 		velocity.x = Mathf.MoveTowards(velocity.x, inputAxis * moveSpeed, moveSpeed * Time.deltaTime);
+
+		if (rigidbody.Raycast(Vector2.right * velocity.x)) {
+			velocity.x = 0f;
+		}
 	}
 
 	private void GroundedMovement()
